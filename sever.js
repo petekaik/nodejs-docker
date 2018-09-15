@@ -1,4 +1,4 @@
-//testing
+// Simple Hello World Node.js test with express
 'use strict';
 
 const express = require('express');
