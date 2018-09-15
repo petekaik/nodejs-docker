@@ -1,5 +1,8 @@
 FROM node:8
 
+# set maintainer
+LABEL maintainer "petteri.kaikkonen@gmail.com"
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -14,6 +17,11 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+
+# set a health check
+HEALTHCHECK --interval=5s \
+            --timeout=5s \
+            CMD curl -f http://127.0.0.1:8080 || exit 1
 
 # Expose relevant port(s)
 EXPOSE 8080
