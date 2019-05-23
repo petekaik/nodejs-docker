@@ -16,7 +16,8 @@ RUN npm install
 # RUN npm install --only=production
 
 # Bundle app source
-COPY . .
+#COPY . .
+COPY *.js ./
 
 # set a health check
 HEALTHCHECK --interval=5s \
