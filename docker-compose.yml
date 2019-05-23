@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  node:
+    image: petekaik/node-web-app
+    container_name: node
+    hostname: node
+    ports:
+      - ${HOST_PORT}:${SERVICE_PORT}
