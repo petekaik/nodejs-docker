@@ -19,6 +19,9 @@ RUN npm install
 #COPY . .
 COPY *.js ./
 
+# Copy additional shell scripts
+COPY shellscripts/* /usr/bin/
+
 # set a health check
 HEALTHCHECK --interval=5s \
     --timeout=5s \
